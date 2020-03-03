@@ -48,10 +48,6 @@ public class PhoneNumber {
         return validation;
     }
 
-    public Long getSourceId() {
-        return sourceId;
-    }
-
     public void validate() {
         this.validation.validate(this);
     }
@@ -71,21 +67,14 @@ public class PhoneNumber {
     }
 
     public String toCsv() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("id, sms_phone, status\n");
-        sb.append(toCsvRow());
-        return sb.toString();
+        return "id, sms_phone, status\n" +
+                toCsvRow();
     }
 
     public String toCsvRow() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(sourceId)
-                .append(",")
-                .append(number)
-                .append(",")
-                .append(validation.getStatus())
-                .append("\n");
-        return sb.toString();
+        return sourceId + "," +
+                number + "," +
+                validation.getStatus() + "\n";
     }
 
     @Override
