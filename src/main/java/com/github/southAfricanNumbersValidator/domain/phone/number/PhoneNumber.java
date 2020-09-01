@@ -10,7 +10,7 @@ import java.util.Objects;
 
 @Entity
 public class PhoneNumber {
-    public final static String NATIONAL_PREFIX = "27";
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
@@ -49,21 +49,7 @@ public class PhoneNumber {
     }
 
     public void validate() {
-        this.validation.validate(this);
-    }
-
-    public void addPrefix() {
-        this.number = NATIONAL_PREFIX + this.number;
-    }
-
-    public void handleDeletedNumber() {
-        this.number = number.substring(Validation.DELETED_SUBSTRING.length());
-    }
-
-    public String handleUpdatedNumber() {
-        String[] numbers = this.number.split(Validation.DELETED_SUBSTRING);
-        this.number = numbers[0];
-        return numbers[1];
+        this.validation.validate(this.number);
     }
 
     public String toCsv() {

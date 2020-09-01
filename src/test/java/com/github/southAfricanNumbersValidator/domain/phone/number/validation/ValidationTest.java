@@ -21,7 +21,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.VALID, validation.getStatus());
@@ -36,7 +36,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.INVALID, validation.getStatus());
@@ -54,7 +54,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.INVALID, validation.getStatus());
@@ -72,7 +72,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.FIXED, validation.getStatus());
@@ -90,7 +90,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.FIXED, validation.getStatus());
@@ -108,7 +108,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.INVALID, validation.getStatus());
@@ -128,7 +128,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.INVALID, validation.getStatus());
@@ -146,7 +146,7 @@ class ValidationTest {
         Validation validation = phoneNumber.getValidation();
 
         //When
-        validation.validate(phoneNumber);
+        validation.validate(phoneNumber.getNumber());
 
         //Then
         assertEquals(Status.INVALID, validation.getStatus());
